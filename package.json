@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sondos-ahmad/CHBackEnd/issues"
   },
-  "homepage": "https://github.com/sondos-ahmad/CHBackEnd#readme"
+  "homepage": "https://github.com/sondos-ahmad/CHBackEnd#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
