@@ -12,10 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-
-import * as ROUTES from "../../constants/routes";
-
-import AxiosContext from "../../Services/context";
+import AxiosContext from "axios";
 import Copyright from "../Copyright";
 
 const INITIAL_STATE = {
@@ -67,7 +64,7 @@ export default function SignIn({ history }) {
           {/* <LockOutlinedIcon /> */}
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Log In
         </Typography>
         <Box
           component="form"
@@ -116,7 +113,7 @@ export default function SignIn({ history }) {
             color="primary"
             sx={{ mt: 3, mb: 2 }}
           >
-            Sign In
+            Log In
           </Button>
           <Grid container>
             <Grid item xs>
@@ -125,7 +122,7 @@ export default function SignIn({ history }) {
               </Link>
             </Grid>
             <Grid item>
-              <Link href={ROUTES.SIGN_UP} variant="body2">
+              <Link href={Register} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
