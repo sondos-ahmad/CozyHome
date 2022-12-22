@@ -11,7 +11,7 @@ import Login from './component/auth/Login';
 
 const App = () => (
   <>
-     <Navbar /> 
+     <Navbar />       
      <Routes><Route exact path='/'element={<Landing/>}/> </Routes>
      <Routes><Route exact path='/'element={<Home />}/> </Routes>
     
