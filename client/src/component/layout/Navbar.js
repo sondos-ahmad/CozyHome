@@ -1,20 +1,14 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import { Button } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
+import {AppBar,Box,Toolbar,IconButton,Typography,InputBase,Menu,MenuItem,Button,Autocomplete,TextField,InputAdornment} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import {Link} from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Data from "./Data.json";
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -74,6 +68,7 @@ export default function PrimarySearchAppBar() {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
+
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -156,14 +151,18 @@ export default function PrimarySearchAppBar() {
           >
             Cozy Home
           </Typography>
-          <Search style={{ background: '#5d4037'}}>
-            <SearchIconWrapper>
-              <SearchIcon/>
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
+          <Search style={{background: '#5d4037'}}>
+            <Autocomplete
+            sx={{width:300}}
+            freeSolo
+           id="combo-box-demo"
+           options={Data.map((option) => option.name)}
+           renderInput={(params) => <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+           <SearchIcon sx={{ color: 'action.active' ,mr:1  }} />
+           <TextField {...params} id="input-with-sx" label="Search" variant="standard" />
+         </Box>
+        }
+          />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -206,6 +205,6 @@ export default function PrimarySearchAppBar() {
       {renderMobileMenu}
       {renderMenu}
     </Box>
+    
   );
 }
- 
