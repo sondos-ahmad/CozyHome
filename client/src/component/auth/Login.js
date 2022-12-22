@@ -14,7 +14,7 @@ import {
 import React from "react";
 import Register from "./Register";
 import AxiosContext from "axios";
-import Copyright from "../CopyRight";
+import Copyright from "../Copyright";
 
 const INITIAL_STATE = {
   email: "",

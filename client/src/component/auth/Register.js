@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import AxiosContext from "axios";
-import CopyRight from '../CopyRight';
+import CopyRight from '../Copyright';
 import Login from "./Login";
 
 const INITIAL_STATE = {
