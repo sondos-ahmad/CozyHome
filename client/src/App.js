@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './component/layout/Navbar';
 import Landing from './component/Landing';
 import Home from './component/layout/Home'
@@ -11,9 +11,9 @@ import Login from './component/auth/Login';
 
 const App = () => (
   <>
-     <Navbar /> 
-     <Routes> <Route exact path='/'element={<Landing/>}/></Routes>
-     <Home />
+     <Navbar />       
+     <Routes><Route exact path='/'element={<Landing/>}/> </Routes>
+     <Routes><Route exact path='/'element={<Home />}/> </Routes>
     
 
     <section className="container">

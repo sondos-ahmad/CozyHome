@@ -1,20 +1,14 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import { Button } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
+import {AppBar,Box,Toolbar,IconButton,Typography,Menu,MenuItem,Autocomplete,TextField} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import {Link} from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Data from "./Data.json";
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -31,36 +25,40 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
+// const SearchIconWrapper = styled('div')(({ theme }) => ({
+//   padding: theme.spacing(0, 2),
+//   height: '100%',
+//   position: 'absolute',
+//   pointerEvents: 'none',
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+// }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//   color: 'inherit',
+//   '& .MuiInputBase-input': {
+//     padding: theme.spacing(1, 1, 1, 0),
+//     // vertical padding + font size from searchIcon
+//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//     transition: theme.transitions.create('width'),
+//     width: '100%',
+//     [theme.breakpoints.up('md')]: {
+//       width: '20ch',
+//     },
+//   },
+// }));
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const[items,setItems]=React.useState(null);
+  const[categories,setCategories]=React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const isCartOpen =Boolean(items);
+  const isSideMenuOpen = Boolean(categories);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -69,16 +67,69 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
 
+
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+  const handleCart=(event)=>{
+    setItems(event.currentTarget);
+  };
+  const handleCartClose=()=>{
+    setItems(null);
+  };
+  const handleSideMenuOpen=(event)=>{
+    setCategories(event.currentTarget);
+  };
+  const handleSideMenuClose=()=>{
+    setCategories(null);
+  };
+  const renderSideMenu = (
+    <Menu
+      anchorEl={categories}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'left',
+      }}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'left',
+      }}
+      open={isSideMenuOpen}
+      onClose={handleSideMenuClose}
+    >
+      <MenuItem onClick={handleSideMenuClose}>Bed Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Dinning Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Living Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Children's Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Offices</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Outdoor</MenuItem>
+    </Menu>
+  );
+  const renderCart = (
+    <Menu
+      anchorEl={items}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isCartOpen}
+      onClose={handleCartClose}
+    >
+      <MenuItem onClick={handleCartClose}>product 1</MenuItem>
+      <MenuItem onClick={handleCartClose}>product 2</MenuItem>
+    </Menu>
+  );
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -143,6 +194,7 @@ export default function PrimarySearchAppBar() {
             edge="start"
             color="#5d4037"
             aria-label="open drawer"
+            onClick={handleSideMenuOpen}
             sx={{ mr: 2 }}
           >
             <MenuIcon />
@@ -156,14 +208,18 @@ export default function PrimarySearchAppBar() {
           >
             Cozy Home
           </Typography>
-          <Search style={{ background: '#5d4037'}}>
-            <SearchIconWrapper>
-              <SearchIcon/>
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
+          <Search style={{background: '#5d4037'}}>
+            <Autocomplete
+            sx={{width:300}}
+            freeSolo
+           id="combo-box-demo"
+           options={Data.map((option) => option.name)}
+           renderInput={(params) => <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+           <SearchIcon sx={{ color: 'action.active' ,mr:1  }} />
+           <TextField {...params} id="input-with-sx" label="Search" variant="standard" />
+         </Box>
+        }
+          />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -172,6 +228,7 @@ export default function PrimarySearchAppBar() {
               edge="end"
               aria-haspopup="true"
               color="#5d4037"
+              onClick={handleCart}
             >
               <ShoppingCartIcon />
             </IconButton>
@@ -204,8 +261,10 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
+      {renderSideMenu}
       {renderMenu}
+      {renderCart}
     </Box>
+    
   );
 }
- 
