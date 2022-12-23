@@ -5,7 +5,6 @@ const Landing = () => {
     <section className="landing">
        {/* <div className="dark-overlay"> */}
         <div className="landing-inner">
-          Cozy Home
         </div>
     
     </section>
