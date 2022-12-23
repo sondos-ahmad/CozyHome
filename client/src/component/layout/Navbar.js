@@ -52,9 +52,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const[items,setItems]=React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const isCartOpen =Boolean(items);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -63,7 +65,6 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
@@ -73,7 +74,31 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+  const handleCart=(event)=>{
+    setItems(event.currentTarget);
+  };
+  const handleCartClose=()=>{
+    setItems(null);
+  };
+  const renderCart = (
+    <Menu
+      anchorEl={items}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isCartOpen}
+      onClose={handleCartClose}
+    >
+      <MenuItem onClick={handleCartClose}></MenuItem>
+      <MenuItem onClick={handleCartClose}><img src ="Logo"/></MenuItem>
+    </Menu>
+  );
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -171,6 +196,7 @@ export default function PrimarySearchAppBar() {
               edge="end"
               aria-haspopup="true"
               color="#5d4037"
+              onClick={handleCart}
             >
               <ShoppingCartIcon />
             </IconButton>
@@ -204,6 +230,7 @@ export default function PrimarySearchAppBar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+      {renderCart}
     </Box>
     
   );
