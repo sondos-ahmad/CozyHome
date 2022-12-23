@@ -3,6 +3,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
+import { Link, useHref } from 'react-router-dom';
 
 
 export default function TitlebarImageList() {
@@ -21,9 +22,9 @@ export default function TitlebarImageList() {
             alt={item.title}
             loading="lazy"
           />
-          <ImageListItemBar
+         <a href={item.Link}> <ImageListItemBar
             title={item.title}
-          />
+          /></a>
         </ImageListItem>
       ))}
     </ImageList>
@@ -34,7 +35,7 @@ const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da',
     title: 'Bed Room',
-    
+    Link: 'https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da',
     rows: 1,
     cols: 1,
     featured: true,
@@ -42,6 +43,7 @@ const itemData = [
   {
     img:'https://images.unsplash.com/photo-1505409628601-edc9af17fda6' ,
     title: 'Dinning Room',
+    Link:'https://images.unsplash.com/photo-1505409628601-edc9af17fda6'
   },
   {
     img: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92',
