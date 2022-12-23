@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './component/layout/Navbar';
 import Landing from './component/Landing';
 import Home from './component/layout/Home'

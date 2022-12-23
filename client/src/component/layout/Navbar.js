@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import {AppBar,Box,Toolbar,IconButton,Typography,InputBase,Menu,MenuItem,Button,Autocomplete,TextField,InputAdornment} from '@mui/material';
+import {AppBar,Box,Toolbar,IconButton,Typography,Menu,MenuItem,Autocomplete,TextField} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -25,38 +25,40 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
+// const SearchIconWrapper = styled('div')(({ theme }) => ({
+//   padding: theme.spacing(0, 2),
+//   height: '100%',
+//   position: 'absolute',
+//   pointerEvents: 'none',
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+// }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//   color: 'inherit',
+//   '& .MuiInputBase-input': {
+//     padding: theme.spacing(1, 1, 1, 0),
+//     // vertical padding + font size from searchIcon
+//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//     transition: theme.transitions.create('width'),
+//     width: '100%',
+//     [theme.breakpoints.up('md')]: {
+//       width: '20ch',
+//     },
+//   },
+// }));
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const[items,setItems]=React.useState(null);
+  const[categories,setCategories]=React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const isCartOpen =Boolean(items);
+  const isSideMenuOpen = Boolean(categories);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -80,6 +82,35 @@ export default function PrimarySearchAppBar() {
   const handleCartClose=()=>{
     setItems(null);
   };
+  const handleSideMenuOpen=(event)=>{
+    setCategories(event.currentTarget);
+  };
+  const handleSideMenuClose=()=>{
+    setCategories(null);
+  };
+  const renderSideMenu = (
+    <Menu
+      anchorEl={categories}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'left',
+      }}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'left',
+      }}
+      open={isSideMenuOpen}
+      onClose={handleSideMenuClose}
+    >
+      <MenuItem onClick={handleSideMenuClose}>Bed Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Dinning Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Living Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Children's Rooms</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Offices</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}>Outdoor</MenuItem>
+    </Menu>
+  );
   const renderCart = (
     <Menu
       anchorEl={items}
@@ -95,8 +126,8 @@ export default function PrimarySearchAppBar() {
       open={isCartOpen}
       onClose={handleCartClose}
     >
-      <MenuItem onClick={handleCartClose}></MenuItem>
-      <MenuItem onClick={handleCartClose}><img src ="Logo"/></MenuItem>
+      <MenuItem onClick={handleCartClose}>product 1</MenuItem>
+      <MenuItem onClick={handleCartClose}>product 2</MenuItem>
     </Menu>
   );
   const menuId = 'primary-search-account-menu';
@@ -163,6 +194,7 @@ export default function PrimarySearchAppBar() {
             edge="start"
             color="#5d4037"
             aria-label="open drawer"
+            onClick={handleSideMenuOpen}
             sx={{ mr: 2 }}
           >
             <MenuIcon />
@@ -229,6 +261,7 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
+      {renderSideMenu}
       {renderMenu}
       {renderCart}
     </Box>

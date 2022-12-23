@@ -12,7 +12,6 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import Register from "./Register";
 import AxiosContext from "axios";
 import Copyright from "../Copyright";
 
