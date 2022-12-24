@@ -52,6 +52,11 @@ const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92',
     title: 'Living Rooms',
+    Link :'LivingRooms',
+    rows: 1,
+    cols: 1,
+    featured: true,
+
   },
   {
     img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gee-house-6-1536335251.jpg',
