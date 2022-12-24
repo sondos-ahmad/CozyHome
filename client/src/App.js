@@ -9,7 +9,7 @@ import Login from './component/auth/Login';
 import BedRooms from './component/Pages/BedRooms';
 // import Footer from './component/layout/Footer';
 import DinningRooms from './component/Pages/DinningRooms'
-
+import LivingRooms from './component/Pages/LivingRooms'
 const App = () => (
   <>
      <Navbar />       
@@ -24,6 +24,7 @@ const App = () => (
         <Route path='/register' element={<Register />} />
       <Route path='/BedRooms' element={<BedRooms />} />
       <Route path='/DinningRooms' element={<DinningRooms />} />
+      <Route path='/LivingRooms' element={<LivingRooms/>} />
       </Routes>
     </section>
   </>
