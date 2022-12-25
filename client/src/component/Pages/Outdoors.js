@@ -3,9 +3,8 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import ListSubheader from '@mui/material/ListSubheader';
 import { IconButton } from '@mui/material';
-
+import ListSubheader from '@mui/material/ListSubheader';
 export default function TitlebarBelowImageList() {
   return (
     
@@ -13,7 +12,7 @@ export default function TitlebarBelowImageList() {
     variant="standard"   cols={3} >
 
           <ImageListItem key="Subheader" cols={3} rows={4} >
-        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div">Dinning Rooms</ListSubheader>
+        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div">Outdoors</ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
         <ImageListItem key={item.img} maxHeight maxWidth >

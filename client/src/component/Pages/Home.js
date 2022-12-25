@@ -70,12 +70,20 @@ const itemData = [
   {
     img: 'https://m.media-amazon.com/images/I/71Vza6sh+0L._AC_SL1300_.jpg',
     title: 'Offices',
-    cols: 2,
+    Link :'Offices',
+    rows: 1,
+    cols: 1,
+    featured: true,
+
   },
   {
     img: 'https://www.mymove.com/wp-content/uploads/2018/06/shutterstock_389852074-scaled.jpg',
     title: "Outdoor", 
-    cols: 2,
+    Link :'Outdoor',
+    rows: 1,
+    cols: 1,
+    featured: true,
+
   }
 
 
