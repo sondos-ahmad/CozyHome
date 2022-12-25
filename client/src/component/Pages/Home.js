@@ -61,7 +61,11 @@ const itemData = [
   {
     img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gee-house-6-1536335251.jpg',
     title: "Children's rooms",
-    cols: 2,
+    Link :'ChildrenRooms',
+    rows: 1,
+    cols: 1,
+    featured: true,
+
   },
   {
     img: 'https://m.media-amazon.com/images/I/71Vza6sh+0L._AC_SL1300_.jpg',

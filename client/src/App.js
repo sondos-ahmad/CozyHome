@@ -10,6 +10,7 @@ import BedRooms from './component/Pages/BedRooms';
 // import Footer from './component/layout/Footer';
 import DinningRooms from './component/Pages/DinningRooms'
 import LivingRooms from './component/Pages/LivingRooms'
+import ChildrenRooms from './component/Pages/ChildrenRooms'
 const App = () => (
   <>
      <Navbar />       
@@ -25,6 +26,7 @@ const App = () => (
       <Route path='/BedRooms' element={<BedRooms />} />
       <Route path='/DinningRooms' element={<DinningRooms />} />
       <Route path='/LivingRooms' element={<LivingRooms/>} />
+      <Route path='/ChildrenRooms' element={<ChildrenRooms/>} />
       </Routes>
     </section>
   </>
