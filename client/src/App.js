@@ -11,7 +11,7 @@ import BedRooms from './component/Pages/BedRooms';
 import DinningRooms from './component/Pages/DinningRooms'
 import LivingRooms from './component/Pages/LivingRooms'
 import ChildrenRooms from './component/Pages/ChildrenRooms'
-import OutDoors from './component/Pages/OutDoors'
+import Outdoors from './component/Pages/Outdoors'
 import Offices from './component/Pages/Offices'
 const App = () => (
   <>
@@ -29,7 +29,7 @@ const App = () => (
       <Route path='/DinningRooms' element={<DinningRooms />} />
       <Route path='/LivingRooms' element={<LivingRooms/>} />
       <Route path='/ChildrenRooms' element={<ChildrenRooms/>} />
-      <Route path='/OutDoors' element={<OutDoors/>} />
+      <Route path='/Outdoors' element={<Outdoors/>} />
       <Route path='/Offices' element={<Offices/>} />
       </Routes>
     </section>
