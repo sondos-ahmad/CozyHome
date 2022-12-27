@@ -127,9 +127,82 @@ const logout = asyncHandler(async (req, res) => {
     });
     return res.status(200).json({ message: "Successfully Logged Out" });
   });
+
+  const getUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+  
+    if (user) {
+      const { _id, name, email, phone } = user;
+      res.status(200).json({
+        _id,
+        name,
+        email,
+        phone,
+        
+      });
+    } else {
+      res.status(400);
+      throw new Error("User Not Found");
+    }
+  });
+  const updateUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+  
+    if (user) {
+      const { name, email, phone} = user;
+      user.email = email;
+      user.name = req.body.name || name;
+      user.phone = req.body.phone || phone;
+   
+     
+  
+      const updatedUser = await user.save();
+      res.status(200).json({
+        _id: updatedUser._id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        phone: updatedUser.phone,
+       
+      });
+    } else {
+      res.status(404);
+      throw new Error("User not found");
+    }
+  });
+  
+  const changePassword = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+    const { oldPassword, password } = req.body;
+  
+    if (!user) {
+      res.status(400);
+      throw new Error("User not found, please signup");
+    }
+    //Validate
+    if (!oldPassword || !password) {
+      res.status(400);
+      throw new Error("Please add old and new password");
+    }
+  
+    // check if old password matches password in DB
+    const passwordIsCorrect = await bcrypt.compare(oldPassword, user.password);
+  
+    // Save new password
+    if (user && passwordIsCorrect) {
+      user.password = password;
+      await user.save();
+      res.status(200).send("Password change successful");
+    } else {
+      res.status(400);
+      throw new Error("Old password is incorrect");
+    }
+  });
  
 module.exports ={
     registerUser,
     LoginUser,
     logout,
+    getUser,
+    updateUser,
+    changePassword
 }
