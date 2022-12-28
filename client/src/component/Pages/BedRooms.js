@@ -5,6 +5,11 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
 import ListSubheader from '@mui/material/ListSubheader';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 export default function TitlebarBelowImageList() {
   return (
     
@@ -14,7 +19,7 @@ export default function TitlebarBelowImageList() {
         <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div">BedRooms</ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
-        <ImageListItem key={item.img} maxHeight maxWidth >
+        <ImageListItem key={item.img} >
 
           <img
 
@@ -22,12 +27,19 @@ export default function TitlebarBelowImageList() {
             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
             loading="lazy"
-            maxHeight maxWidth
+        
           />
           <ImageListItemBar
         
-            title={item.title}
-            subtitle={<span> Price : {item.author} EGP </span>}
+           title={ <span> <h4>{item.title }</h4></span>}
+            subtitle={
+            <span> <h3> Price : {item.author} EGP  </h3>
+            <div>  <Button variant="contained" Add to cart> 
+                Add to cart
+</Button></div>  
+       
+        </span>
+        }
             position="below"
             actionIcon={
                 <IconButton
