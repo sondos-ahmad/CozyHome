@@ -13,10 +13,14 @@ import LivingRooms from './component/Pages/LivingRooms'
 import ChildrenRooms from './component/Pages/ChildrenRooms'
 import Outdoors from './component/Pages/Outdoors'
 import Offices from './component/Pages/Offices'
+import AdminDashBoard from './component/layout/AdminDashBoard'
+import AddProducts from './component/layout/AddProducts'
 
 const App = () => (
   <>
-     <Navbar />       
+     <Navbar />    
+{/* <AdminDashBoard/>
+<Routes><Route exact path ='/addproducts'element={<AddProducts/>}/></Routes> */}
      <Routes><Route exact path='/'element={<Landing/>}/> </Routes>
      <Routes><Route exact path='/'element={<Home />}/> </Routes>
   

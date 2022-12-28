@@ -206,7 +206,7 @@ export default function PrimarySearchAppBar() {
             color="#5d4037"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            <Link  to ="/">Cozy Home</Link>
+            <Link style={{ color:"#5d4037"}} to ="/">Cozy Home</Link>
           </Typography>
           <Search style={{background: '#5d4037'}}>
             <Autocomplete
