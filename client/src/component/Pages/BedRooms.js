@@ -5,11 +5,8 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
 import ListSubheader from '@mui/material/ListSubheader';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+
+import { Button} from '@mui/material';
 export default function TitlebarBelowImageList() {
   return (
     
@@ -32,23 +29,17 @@ export default function TitlebarBelowImageList() {
           <ImageListItemBar
         
            title={ <span> <h4>{item.title }</h4></span>}
+      
             subtitle={
             <span> <h3> Price : {item.author} EGP  </h3>
-            <div>  <Button variant="contained" Add to cart> 
-                Add to cart
-</Button></div>  
+            <div> 
+        
+                <Button variant="contained" color='success'>Add To Cart<ShoppingCartIcon /></Button>
+</div>  
        
         </span>
         }
-            position="below"
-            actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  aria-label={`info about ${item.title}`}
-                >
-              <ShoppingCartIcon />
-                </IconButton>
-           }
+    
           />
        
         </ImageListItem>
