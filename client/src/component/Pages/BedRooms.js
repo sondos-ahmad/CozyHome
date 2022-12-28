@@ -13,7 +13,7 @@ export default function TitlebarBelowImageList() {
     <ImageList gap={20} 
     variant="standard"   cols={3} >
           <ImageListItem key="Subheader" cols={3} rows={4} >
-        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div">BedRooms</ListSubheader>
+        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2,marginTop:2}} component="div">BedRooms</ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
         <ImageListItem key={item.img} maxHeight maxWidth >
