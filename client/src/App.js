@@ -6,6 +6,7 @@ import Landing from './component/Landing';
 import Home from './component/layout/Home'
 import Register from './component/auth/Register';
 import Login from './component/auth/Login';
+import Footer from './component/layout/Footer';
 
 
 
@@ -14,14 +15,12 @@ const App = () => (
      <Navbar />       
      <Routes><Route exact path='/'element={<Landing/>}/> </Routes>
      <Routes><Route exact path='/'element={<Home />}/> </Routes>
-    
-
-    <section className="container">
+     
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>
-    </section>
+      <Routes><Route exact path='/'element={<Footer/>}/></Routes>
   </>
 );
 export default App;

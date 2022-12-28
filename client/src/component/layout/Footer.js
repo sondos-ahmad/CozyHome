@@ -1,12 +1,41 @@
-import React from 'react'
-import { Container , Box } from '@mui/system'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
 
-const Footer = () => {
+function Copyright() {
   return (
- <footer>
-    
- </footer>
-  )
+    <Typography variant="body2" color="text.secondary">
+      {'Copyright © '}
+      <Link color="inherit" href="/">
+        Cozy Home
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
 
-export default Footer
+export default function StickyFooter() {
+  return (
+  
+      
+      <Box
+        component="footer"
+        sx={{
+          py:2,
+          px: 4,
+          mt: 'auto',
+          backgroundColor: "#5d4037",
+        }}
+      >
+        <Container maxWidth="sm">
+          <Typography variant="body1" sx={{color:"beige"}}>
+            Contact us +02333333
+          </Typography>
+          <Copyright />
+        </Container>
+      </Box>
+  );
+}
