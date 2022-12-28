@@ -13,7 +13,7 @@ export default function TitlebarBelowImageList() {
     variant="standard"   cols={3} >
 
           <ImageListItem key="Subheader" cols={3} rows={4} >
-        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div">Dinning Rooms</ListSubheader>
+        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div"> Dinning Rooms </ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
         <ImageListItem key={item.img} maxHeight maxWidth >
@@ -40,17 +40,7 @@ export default function TitlebarBelowImageList() {
    
     </span>
     }
-          //   position="below"
-          //   actionIcon={
-          //       <IconButton
-          //         sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-          //         aria-label={`info about ${item.title}`}
-          //       >
-          //     <ShoppingCartIcon />
-          //       </IconButton>
-          //  }
-          />
-          
+/>
        
         </ImageListItem>
       ))}
