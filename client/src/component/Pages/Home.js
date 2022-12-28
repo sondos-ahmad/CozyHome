@@ -79,7 +79,7 @@ const itemData = [
   {
     img: 'https://www.mymove.com/wp-content/uploads/2018/06/shutterstock_389852074-scaled.jpg',
     title: "Outdoor", 
-    Link :'Outdoors',
+    Link :'OutDoors',
     rows: 1,
     cols: 1,
     featured: true,
