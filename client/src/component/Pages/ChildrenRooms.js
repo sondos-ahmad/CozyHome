@@ -5,6 +5,8 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
 import ListSubheader from '@mui/material/ListSubheader';
+
+import { Button} from '@mui/material';
 export default function TitlebarBelowImageList() {
   return (
     
@@ -12,10 +14,10 @@ export default function TitlebarBelowImageList() {
     variant="standard"   cols={3} >
 
           <ImageListItem key="Subheader" cols={3} rows={4} >
-        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div">Children's Rooms</ListSubheader>
+        <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div"> <h1>Children's Rooms</h1>Children's Rooms</ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
-        <ImageListItem key={item.img} maxHeight maxWidth >
+        <ImageListItem key={item.img}>
 
           <img
 
@@ -27,18 +29,19 @@ export default function TitlebarBelowImageList() {
           />
           <ImageListItemBar
         
-            title={item.title}
-            subtitle={<span> Price : {item.author}</span>}
-            position="below"
-            actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  aria-label={`info about ${item.title}`}
-                >
-              <ShoppingCartIcon />
-                </IconButton>
-           }
-          />
+      
+        title={ <span> <h4>{item.title }</h4></span>}
+      
+        subtitle={
+        <span> <h3> Price : {item.author} EGP  </h3>
+        <div> 
+    
+            <Button variant="contained" color='success'> Add To Cart<ShoppingCartIcon /></Button>
+</div>  
+   
+    </span>
+    }
+/>
           
        
         </ImageListItem>
@@ -53,13 +56,15 @@ export default function TitlebarBelowImageList() {
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    img: 'https://www.ikea.com/images/a-bedroom-with-a-kura-reversible-bed-with-blavingad-bed-line-86427688e72e376b1072ec74902d3984.jpg?f=xxxl',
     title: 'Dark Bed Room',
     author: '@bkristastucchio',
+    Link: 'Dark Bed Room',
+    featured: true,
     
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    img: 'https://www.ikea.com/images/a-tuffing-bunk-bed-in-a-childrens-room-with-a-football-and-t-d4fadd3a99c65081e26e5f0a27a6185c.jpg?f=xxxl',
     title: 'Blue bed Room',
     author: '@rollelflex_graphy726',
   },

@@ -31,6 +31,7 @@ const App = () => (
       <Route path='/ChildrenRooms' element={<ChildrenRooms/>} />
       <Route path='/Outdoors' element={<Outdoors/>} />
       <Route path='/Offices' element={<Offices/>} />
+   
       </Routes>
     </section>
   </>
