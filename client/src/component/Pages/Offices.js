@@ -11,7 +11,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 export default function TitlebarBelowImageList() {
   return (
     
-    <ImageList gap={20} 
+    <ImageList gap={10} sx={{marginX:10,marginTop:5 }}
     variant="standard"   cols={3} >
 
           <ImageListItem key="Subheader" cols={3} rows={4} >
@@ -57,65 +57,69 @@ export default function TitlebarBelowImageList() {
 }
 const itemData = [
   {
-    img: 'https://www.ikea.com/images/a-white-hemnes-bed-in-a-bright-room-surrounded-by-sheer-whit-737c777fa87266829bd62fa39505b6ed.jpg?f=xxxl',
-    title: 'white bedroom with Country-style tranquility',
-    author: '35,000 ',
+    img: 'https://i.pinimg.com/564x/90/ce/6b/90ce6bc4395b396ee48aea004ba99841.jpg',
+    title: 'white Office',
+    author: '5,000 ',
     
   },
   {
-    img: 'https://i.pinimg.com/564x/58/45/86/584586fcc86abe15e9b87a7a9f51f353.jpg',
-    title: 'beige & green bedroom',
-    author: '42,935 ',
+    img: 'https://i.pinimg.com/564x/58/20/79/5820796ee729c449358db3908692cf30.jpg',
+    title: ' gray Office',
+    author: '2,935 ',
   },
   {
-    img: 'https://i.pinimg.com/564x/51/cc/25/51cc2594d7aa9373a87e1bd9c992850b.jpg',
-    title: 'Wood & Black bedroom',
-    author: ' 72,935',
+    img: 'https://i.pinimg.com/564x/22/7e/a7/227ea78f702a3137d43a5a4c977548d0.jpg',
+    title: 'Wood & Black Office',
+    author: ' 7,935',
   },
-  {
-    img: 'https://i.pinimg.com/564x/0c/10/28/0c10288da6d2eac570b049ac229bcead.jpg',
-    title: 'gray bedroom',
-    author: '51,935 ',
-  },
-  {
-    img: 'https://i.pinimg.com/564x/f2/b7/b6/f2b7b65dd9728a919dcac0b14595aff6.jpg',
 
-    title: 'white bedroom with Genzari',
-    author: '35,000',
+  {
+    img: 'https://i.pinimg.com/564x/f0/40/0b/f0400bd481268d3e56e07e2dd7bd7002.jpg',
+
+    title: 'Doble Office',
+    author: '15,000',
   },
   {
-    img: 'https://i.pinimg.com/564x/58/9e/5b/589e5becf6175764eb13c32fdc22e889.jpg',
-    title: 'woody bedroom',
+    img: 'https://i.pinimg.com/564x/5c/06/e6/5c06e61ec927698b8cada304f8847844.jpg',
+    title: 'woody Doble Office ',
     author: '72,935 ',
   },
+
   {
-    img: 'https://i.pinimg.com/564x/ab/3c/fb/ab3cfb541c37d2094f099bf678a1db6f.jpg',
-    title: 'Black Bed ',
-    author: '12,935',
+    img: 'https://i.pinimg.com/564x/90/ce/6b/90ce6bc4395b396ee48aea004ba99841.jpg',
+    title: 'white Office',
+    author: '5,000 ',
+    
   },
   {
-    img: 'https://i.pinimg.com/564x/c8/b0/61/c8b061c3d76103d9917ccff201fc7a14.jpg',
-    title: 'woody bedroom',
-    author: '39,0000  ',
+    img: 'https://i.pinimg.com/564x/58/20/79/5820796ee729c449358db3908692cf30.jpg',
+    title: ' gray Office',
+    author: '2,935 ',
   },
   {
-    img: 'https://i.pinimg.com/564x/58/45/86/584586fcc86abe15e9b87a7a9f51f353.jpg',
-    title: 'beige & green bedroom',
-    author: '72,935 ',
+    img: 'https://i.pinimg.com/564x/22/7e/a7/227ea78f702a3137d43a5a4c977548d0.jpg',
+    title: 'Wood & Black Office',
+    author: ' 7,935',
   },
   {
-    img: 'https://i.pinimg.com/564x/e7/cd/b3/e7cdb31759866f0fefe35f369a456af1.jpg',
-    title: 'Woody bedroom with Country-style tranquility',
-    author: '75,000',
+    img: 'https://i.pinimg.com/564x/90/ce/6b/90ce6bc4395b396ee48aea004ba99841.jpg',
+    title: 'white Office',
+    author: '5,000 ',
+    
   },
   {
-    img: 'https://i.pinimg.com/564x/7c/19/90/7c1990badcef2684af712a0e8ff26c86.jpg',
-    title: 'Modern woody bedroom',
-    author: '25,0000 ',
+    img: 'https://i.pinimg.com/564x/58/20/79/5820796ee729c449358db3908692cf30.jpg',
+    title: ' gray Office',
+    author: '2,935 ',
   },
   {
-    img: 'https://i.pinimg.com/564x/51/cc/25/51cc2594d7aa9373a87e1bd9c992850b.jpg',
-    title: 'Dark bedroom',
-    author: '40,0000',
+    img: 'https://i.pinimg.com/564x/22/7e/a7/227ea78f702a3137d43a5a4c977548d0.jpg',
+    title: 'Wood & Black Office',
+    author: ' 7,935',
+  },
+  {
+    img: 'https://i.pinimg.com/564x/0c/be/d7/0cbed7761b22a0e8064767653a56fa5e.jpg',
+    title: '  woody gray Office',
+    author: '2,935 ',
   },
 ];

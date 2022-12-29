@@ -8,7 +8,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 export default function TitlebarBelowImageList() {
   return (
     
-    <ImageList gap={20} 
+    <ImageList gap={10} sx={{marginX:10,marginTop:5 }}
     variant="standard"   cols={3} >
 
           <ImageListItem key="Subheader" cols={3} rows={4} >
