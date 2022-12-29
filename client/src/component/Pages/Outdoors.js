@@ -103,4 +103,53 @@ const itemData = [
     author: '13,000',
     
   },
+  {
+    img: 'https://i.pinimg.com/564x/60/a2/03/60a203038e661eb984ada275c5961d28.jpg',
+    title: ' patio simply georgeous',
+    author: '13,000',
+    
+  },
+  {
+    img: 'https://i.pinimg.com/564x/ff/d4/f0/ffd4f0f17be27488b2d7d056e5522bb7.jpg',
+    title: 'swinging bench.',
+    author: '7,000',
+  },
+ 
+
+  {
+    img: 'https://i.pinimg.com/564x/a5/7a/3d/a57a3dc7392f5b1f06b972f40e025523.jpg',
+    title: 'roof',
+    author: '18,000',
+  },
+  {
+    img: 'https://i.pinimg.com/564x/a5/7a/3d/a57a3dc7392f5b1f06b972f40e025523.jpg',
+    title: ' concrete outdoor sofa',
+    author: '11,500',
+  },
+  {
+    img: 'https://i.pinimg.com/564x/fb/ba/fb/fbbafbe9571f945b35c3101d6bd6d40b.jpg',
+    title: 'concrete outdoor sofa',
+    author: '10,000',
+  },
+  {
+    img: 'https://i.pinimg.com/564x/f3/e6/f1/f3e6f1fcaea25a7f6859c696ae5acad1.jpg',
+    title: 'Outdoors',
+    author: '15,000',
+  },
+  {
+    img: 'https://i.pinimg.com/736x/fa/61/f6/fa61f63ca2b60a473693baefc1686d88.jpg',
+    title: 'swinging bench.',
+    author: '7,000',
+  },
+  {
+    img: 'https://i.pinimg.com/564x/d5/46/7f/d5467fcea601e50919035d419790c2b7.jpg',
+    title: 'swinging bench.',
+    author: '7,000',
+  },
+  {
+    img: 'https://i.pinimg.com/564x/60/a2/03/60a203038e661eb984ada275c5961d28.jpg',
+    title: ' patio simply georgeous',
+    author: '13,000',
+    
+  },
 ];
