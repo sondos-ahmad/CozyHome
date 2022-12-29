@@ -35,7 +35,7 @@ const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da',
     title: 'Bed Room',
-    Link: 'https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da',
+    Link: 'BedRooms',
     rows: 1,
     cols: 1,
     featured: true,
@@ -43,26 +43,32 @@ const itemData = [
   {
     img:'https://images.unsplash.com/photo-1505409628601-edc9af17fda6' ,
     title: 'Dinning Room',
-    Link:'https://images.unsplash.com/photo-1505409628601-edc9af17fda6'
+    Link:'DinningRooms'
   },
   {
     img: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92',
     title: 'Living Rooms',
+    Link:'LivingRooms',
   },
   {
     img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gee-house-6-1536335251.jpg',
     title: "Children's rooms",
-    cols: 2,
+    Link:'ChildrenRooms',
+    rows:1,
+    cols: 1,
+    featured: true,
   },
   {
     img: 'https://m.media-amazon.com/images/I/71Vza6sh+0L._AC_SL1300_.jpg',
     title: 'Offices',
-    cols: 2,
+    Link:'Offices',
+    rows:1,
+    cols: 1,
   },
   {
     img: 'https://www.mymove.com/wp-content/uploads/2018/06/shutterstock_389852074-scaled.jpg',
-    title: "Outdoor", 
-    cols: 2,
+    title: "Outdoor",
+    Link:'Outdoors', 
   }
 
 
