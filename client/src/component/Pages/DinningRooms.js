@@ -46,8 +46,6 @@ export default function TitlebarBelowImageList() {
   );
  
 }
-
-
 const itemData = [
   {
     img: 'https://i.pinimg.com/564x/e3/04/56/e304561eea2de03b8bf1ee1cd3411c0b.jpg',
