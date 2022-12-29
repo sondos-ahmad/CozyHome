@@ -35,8 +35,7 @@ export default function SignUp({ history }) {
 
   const handleSubmit = (event) => {
     axios
-      .createUserWithEmailAndPassword(name, email, password)
-      .then(() => {
+      .get("http://localhost:5000/api/users",  { crossdomain: true }).then(() => {
         setSignUpFormState(INITIAL_STATE);
         history.goBack();
       })
