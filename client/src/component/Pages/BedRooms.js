@@ -8,9 +8,9 @@ import { Button} from '@mui/material';
 export default function TitlebarBelowImageList() {
   return (
     
-    <ImageList gap={20} 
+    <ImageList gap={10} sx={{marginX:10,marginTop:5 }} 
     variant="standard"   cols={3} >
-          <ImageListItem key="Subheader" cols={3} rows={4} >
+          <ImageListItem key="Subheader" cols={3} rows={4}  >
         <ListSubheader sx={{fontSize:60,textAlign:'center',marginBottom:2}} component="div">BedRooms</ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
