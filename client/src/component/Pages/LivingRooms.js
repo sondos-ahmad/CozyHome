@@ -24,8 +24,7 @@ export default function TitlebarBelowImageList() {
             maxHeight maxWidth
           />
           <ImageListItemBar
-   
-                
+
 title={ <span> <h4>{item.title }</h4></span>}
       
       subtitle={
