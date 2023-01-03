@@ -3,15 +3,12 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { IconButton } from '@mui/material';
-import { margin, maxWidth,maxHeight, textAlign } from '@mui/system';
-import { alignProperty } from '@mui/material/styles/cssUtils';
 import ListSubheader from '@mui/material/ListSubheader';
-import Copyright from '../Copyright';
+import { Button} from '@mui/material';
 export default function TitlebarBelowImageList() {
   return (
     
-    <ImageList gap={20} 
+    <ImageList gap={10} sx={{marginX:10,marginTop:5 }} 
     variant="standard"   cols={3} >
 
           <ImageListItem key="Subheader" cols={3} rows={4} >
@@ -29,21 +26,17 @@ export default function TitlebarBelowImageList() {
             maxHeight maxWidth
           />
           <ImageListItemBar
-        
-            title={item.title}
-            subtitle={<span> Price : {item.author}</span>}
-            position="below"
-            actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  aria-label={`info about ${item.title}`}
-                >
-              <ShoppingCartIcon />
-                </IconButton>
-           }
-          />
-          
-       
+
+title={ <span> <h4>{item.title }</h4></span>}
+      
+      subtitle={
+      <span> <h3> Price : {item.author} EGP  </h3>
+      <div> 
+  
+          <Button variant="contained" color='success'> Add To Cart<ShoppingCartIcon /></Button>
+</div>  
+ 
+  </span> }/>
         </ImageListItem>
       ))}
       
@@ -56,64 +49,67 @@ export default function TitlebarBelowImageList() {
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Dark Bed Room',
-    author: '@bkristastucchio',
+    img: 'https://i.pinimg.com/750x/d6/af/70/d6af7085e1f7f0e1c9536c0eca5582ed.jpg',
+    title: 'Mintgreen with beige Livingroom',
+    author: '25,000',
     
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Blue bed Room',
-    author: '@rollelflex_graphy726',
+    img: 'https://i.pinimg.com/564x/59/df/f6/59dff652c3a675d0cd541ebc50d6b0a5.jpg',
+    title:' beige Livingroom',
+    author: '35,000',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    author: '@helloimnik',
+    img: 'https://i.pinimg.com/736x/5a/ed/66/5aed66092a0b401dc2a0d256cca24319.jpg',
+    title: 'Brawon livingroom ',
+    author: '18,000',
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    author: '@nolanissac',
+    img: 'https://i.pinimg.com/564x/d3/4d/c4/d34dc4444ef9c69198b17195437f1f35.jpg',
+    title: 'Dark Blue Livingroom',
+    author: '25,000',
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    author: '@hjrc33',
+    img: 'https://i.pinimg.com/564x/c9/86/79/c9867950747acdb064e3a9135be80437.jpg',
+    title: 'Green&beige Livingroom',
+    author: '17,000',
   },
   {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
+    img: 'https://i.pinimg.com/564x/40/e2/e2/40e2e2db128c081994d1431274102f6e.jpg',
+    title: 'Blue Livingroom',
+    author: '10,000',
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-    author: '@tjdragotta',
+    img: 'https://i.pinimg.com/564x/b7/00/f3/b700f33100f3cd7d4f1df65cbdbc0365.jpg',
+    title: 'Pink & white livingroom',
+    author: '57,0000',
   },
   {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-    author: '@katie_wasserman',
+    img: 'https://i.pinimg.com/564x/98/f2/9d/98f29d59bf84d8f86c6807c962f59d64.jpg',
+    title: 'Green livingroom  ',
+    author: '25,000',
+  },
+
+  {
+    img: 'https://i.pinimg.com/564x/59/df/f6/59dff652c3a675d0cd541ebc50d6b0a5.jpg',
+    title:'Mintgreen with beige Livingroom',
+    author: '35,000',
   },
   {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    author: '@silverdalex',
+    img: 'https://i.pinimg.com/564x/22/12/f3/2212f33ab58a2de2adac792d9b1f6672.jpg',
+    title: 'Blue & white Livingroom',
+    author: '40,000',
   },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-    author: '@shelleypauls',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-    author: '@peterlaster',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    author: '@southside_customs',
-  },
+  
+    {
+      img: 'https://i.pinimg.com/564x/b7/00/f3/b700f33100f3cd7d4f1df65cbdbc0365.jpg',
+      title: 'Pink & white livingroom',
+      author: '57,0000',
+    },
+    {
+      img: 'https://i.pinimg.com/750x/d6/af/70/d6af7085e1f7f0e1c9536c0eca5582ed.jpg',
+      title: 'Mintgreen with beige Livingroom',
+      author: '25,000',
+      
+    },
 ];

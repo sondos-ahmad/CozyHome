@@ -25,29 +25,7 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-// const SearchIconWrapper = styled('div')(({ theme }) => ({
-//   padding: theme.spacing(0, 2),
-//   height: '100%',
-//   position: 'absolute',
-//   pointerEvents: 'none',
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-// }));
 
-// const StyledInputBase = styled(InputBase)(({ theme }) => ({
-//   color: 'inherit',
-//   '& .MuiInputBase-input': {
-//     padding: theme.spacing(1, 1, 1, 0),
-//     // vertical padding + font size from searchIcon
-//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-//     transition: theme.transitions.create('width'),
-//     width: '100%',
-//     [theme.breakpoints.up('md')]: {
-//       width: '20ch',
-//     },
-//   },
-// }));
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -103,12 +81,12 @@ export default function PrimarySearchAppBar() {
       open={isSideMenuOpen}
       onClose={handleSideMenuClose}
     >
-      <MenuItem onClick={handleSideMenuClose}>Bed Rooms</MenuItem>
-      <MenuItem onClick={handleSideMenuClose}>Dinning Rooms</MenuItem>
-      <MenuItem onClick={handleSideMenuClose}>Living Rooms</MenuItem>
-      <MenuItem onClick={handleSideMenuClose}>Children's Rooms</MenuItem>
-      <MenuItem onClick={handleSideMenuClose}>Offices</MenuItem>
-      <MenuItem onClick={handleSideMenuClose}>Outdoor</MenuItem>
+      <MenuItem onClick={handleSideMenuClose}><Link to = "BedRooms">Bed Rooms</Link></MenuItem>
+      <MenuItem onClick={handleSideMenuClose}><Link to ="DinningRooms">Dinning Rooms</Link></MenuItem>
+      <MenuItem onClick={handleSideMenuClose}><Link to="LivingRooms">Living Rooms</Link></MenuItem>
+      <MenuItem onClick={handleSideMenuClose}><Link to="ChildrenRooms">Children's Rooms</Link></MenuItem>
+      <MenuItem onClick={handleSideMenuClose}><Link to="Offices">Offices</Link></MenuItem>
+      <MenuItem onClick={handleSideMenuClose}><Link to="Outdoors">Outdoor</Link></MenuItem>
     </Menu>
   );
   const renderCart = (
@@ -206,7 +184,7 @@ export default function PrimarySearchAppBar() {
             color="#5d4037"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Cozy Home
+            <Link style={{ color:"#5d4037"}} to ="/">Cozy Home</Link>
           </Typography>
           <Search style={{background: '#5d4037'}}>
             <Autocomplete

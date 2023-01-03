@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import AxiosContext from "axios";
+import AxiosContext from "../../Services/context";
 import Copyright from "../Copyright";
 
 const INITIAL_STATE = {

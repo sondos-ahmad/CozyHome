@@ -1,37 +1,33 @@
 {
-  "name": "cozyhome",
+  "name": "chbackend",
   "version": "1.0.0",
-  "description": "Furniture shop Website",
-  "main": "server.js",
+  "description": "Furniture website",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sondos-ahmad/CozyHome.git"
+    "url": "git+https://github.com/sondos-ahmad/CHBackEnd.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sondos-ahmad/CozyHome/issues"
+    "url": "https://github.com/sondos-ahmad/CHBackEnd/issues"
   },
-  "homepage": "https://github.com/sondos-ahmad/CozyHome#readme",
-  "devDependencies": {
-    "concurrently": "^7.6.0",
-    "nodemon": "^2.0.20"
-  },
+  "homepage": "https://github.com/sondos-ahmad/CHBackEnd#readme",
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@fontsource/roboto": "^4.5.8",
-    "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.1",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.8",
+    "express": "^4.18.2",
     "express-validator": "^6.14.2",
     "gravatar": "^1.8.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.8.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
   }
 }
